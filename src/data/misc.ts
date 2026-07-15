@@ -2,8 +2,8 @@ export interface CodingProfile {
   id: string;
   platform: string;
   handle: string;
+  description: string;
   url: string;
-  stats: { label: string; value: number; suffix?: string }[];
 }
 
 // GitHub/Codeforces stats intentionally left at 0 — the resume names these

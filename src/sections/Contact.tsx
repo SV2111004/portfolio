@@ -1,4 +1,4 @@
-import { Mail, FileText, Send } from "lucide-react";
+import { Mail, Send } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "../components/BrandIcons";
 import Eyebrow from "../components/Eyebrow";
 import Reveal from "../components/Reveal";
