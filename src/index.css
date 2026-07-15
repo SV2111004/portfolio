@@ -1,0 +1,169 @@
+@import "tailwindcss";
+
+@theme {
+  /* ---- Color tokens, derived from the courtyard bench photo, ----
+     ---- set at dusk under a clear sky ----
+     jali    = the teal-painted iron bench
+     brick   = the terracotta lattice wall
+     ochre   = the mustard planter (now doubling as string-light glow)
+     linen   = the cream kurta
+     dusk    = the indigo evening sky the courtyard sits under        */
+  --color-ink: #0a1614;
+  --color-ink-soft: #12211d;
+  --color-surface: #17302a;
+  --color-surface-hi: #204339;
+  --color-jali: #2f7a6f;
+  --color-jali-bright: #4fc2ac;
+  --color-brick: #c2603f;
+  --color-brick-bright: #ef7d54;
+  --color-ochre: #d9a441;
+  --color-ochre-bright: #ffcf6b;
+  --color-linen: #f6f1e4;
+  --color-linen-dim: #cdc6b6;
+  --color-muted: #8ea69f;
+  --color-dusk: #241a42;
+  --color-dusk-bright: #6a53b8;
+
+  --font-display: "Fraunces", "Georgia", serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --font-body: "Inter", "General Sans", system-ui, sans-serif;
+
+  --shadow-glow-jali: 0 0 70px -10px rgba(79, 194, 172, 0.55);
+  --shadow-glow-ochre: 0 0 70px -10px rgba(255, 207, 107, 0.45);
+  --shadow-glow-brick: 0 0 70px -10px rgba(239, 125, 84, 0.4);
+  --shadow-glow-dusk: 0 0 80px -8px rgba(106, 83, 184, 0.4);
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: auto;
+    background: var(--color-ink);
+  }
+
+  body {
+    background: var(--color-ink);
+    color: var(--color-linen);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.01em;
+  }
+
+  ::selection {
+    background: var(--color-jali-bright);
+    color: var(--color-ink);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-ochre-bright);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  a, button {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--color-ink);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-surface-hi);
+    border-radius: 8px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-jali);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .glass {
+    background: linear-gradient(160deg, rgba(29, 54, 47, 0.6), rgba(19, 36, 32, 0.48));
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border: 1px solid rgba(241, 236, 224, 0.1);
+    box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.05) inset;
+  }
+
+  .jali-grid {
+    background-image:
+      linear-gradient(rgba(79, 194, 172, 0.16) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(79, 194, 172, 0.16) 1px, transparent 1px);
+    background-size: 56px 56px;
+  }
+
+  /* Sitewide backdrop grid: fixed, never animated. Opacity lives on the
+     parent wrapper (see AmbientBackground) so this stays a pure pattern. */
+  .engineering-grid {
+    background-image:
+      linear-gradient(rgba(246, 241, 228, 0.5) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(246, 241, 228, 0.5) 1px, transparent 1px);
+    background-size: 64px 64px;
+  }
+
+  .noise::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    opacity: 0.035;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@keyframes orbit-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes counter-orbit-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(-360deg); }
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.15; }
+  50% { opacity: 0.85; }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.22; transform: scale(1); }
+  50% { opacity: 0.34; transform: scale(1.03); }
+}
+
+@keyframes aurora-drift {
+  0% { transform: translate3d(-4%, -2%, 0) rotate(0deg) scale(1); }
+  50% { transform: translate3d(4%, 3%, 0) rotate(6deg) scale(1.08); }
+  100% { transform: translate3d(-4%, -2%, 0) rotate(0deg) scale(1); }
+}
+
+@keyframes shooting-star {
+  0% { transform: translate3d(0, 0, 0); opacity: 0; }
+  4% { opacity: 1; }
+  20% { transform: translate3d(-320px, 220px, 0); opacity: 0; }
+  100% { transform: translate3d(-320px, 220px, 0); opacity: 0; }
+}
