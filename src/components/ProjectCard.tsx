@@ -13,7 +13,11 @@ const detailBlocks: { key: keyof Project; label: string }[] = [
   { key: "learnings", label: "Learnings" },
 ];
 
-export default function ProjectCard({ project, index }: { project: Project; index: number }) {
+export default function ProjectCard({
+  project,
+}: {
+  project: Project;
+}) {
   const [open, setOpen] = useState(false);
 
   return (
