@@ -24,7 +24,7 @@ export default function Education() {
         <div className="mt-14 flex flex-col gap-6">
           {education.map((entry, i) => (
             <Reveal key={entry.id} delay={i * 0.1}>
-              <TiltCard glow="jali" className="p-7 sm:p-9">
+              <TiltCard  className="p-7 sm:p-9">
                 <div className="grid grid-cols-1 items-center gap-8 sm:grid-cols-[1fr_auto]">
                   <div>
                     <div className="mb-3 flex items-center gap-3">

@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from "framer-motion";
-import { ChevronDown, ExternalLink, ImageIcon } from "lucide-react";
+import { ChevronDown, ExternalLink } from "lucide-react";
 import { GithubIcon } from "./BrandIcons";
 import { useState } from "react";
 import { type Project } from "../data/projects";
@@ -19,7 +19,7 @@ export default function ProjectCard({ project, index }: { project: Project; inde
   return (
     <motion.div
       layout
-      className="glass overflow-hidden rounded-3xl"
+      className="group glass overflow-hidden rounded-3xl"
       transition={{ layout: { duration: 0.5, ease: [0.16, 1, 0.3, 1] } }}
     >
       <button
@@ -28,11 +28,13 @@ export default function ProjectCard({ project, index }: { project: Project; inde
         aria-expanded={open}
         className="grid w-full grid-cols-1 items-center gap-6 p-6 text-left sm:grid-cols-[auto_1fr_auto] sm:p-8"
       >
-        <div className="flex aspect-video w-full items-center justify-center rounded-2xl bg-[var(--color-surface)] sm:w-40">
-          <span className="font-mono text-3xl text-[var(--color-jali-bright)]/40">
-            {String(index + 1).padStart(2, "0")}
-          </span>
-        </div>
+        <div className="aspect-video w-full overflow-hidden rounded-2xl sm:w-100">
+  <img
+    src={project.coverImage}
+    alt={project.name}
+    className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+  />
+</div>
 
         <div>
           <h3 className="font-display text-2xl text-[var(--color-linen)]">{project.name}</h3>
@@ -70,16 +72,18 @@ export default function ProjectCard({ project, index }: { project: Project; inde
           >
             <div className="border-t border-[var(--color-linen)]/10 px-6 pb-8 pt-6 sm:px-8">
               {/* screenshots carousel */}
-              <div className="mb-8 flex gap-4 overflow-x-auto pb-2">
-                {(project.screenshots.length ? project.screenshots : [0, 1, 2]).map((_, i) => (
-                  <div
-                    key={i}
-                    className="flex aspect-video w-56 flex-shrink-0 items-center justify-center rounded-xl bg-[var(--color-surface)]"
-                  >
-                    <ImageIcon size={22} className="text-[var(--color-muted)]" />
-                  </div>
-                ))}
-              </div>
+             {project.screenshots.length > 0 && (
+  <div className="mb-8 flex gap-4 overflow-x-auto pb-2">
+    {project.screenshots.map((image, i) => (
+      <img
+        key={i}
+        src={image}
+        alt={`${project.name} ${i + 1}`}
+        className="aspect-video w-72 flex-shrink-0 rounded-xl object-cover border border-[var(--color-linen)]/10"
+      />
+    ))}
+  </div>
+)}
 
               <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
                 {detailBlocks.map((block) => (

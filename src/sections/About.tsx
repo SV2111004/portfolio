@@ -13,7 +13,7 @@ const facets = [
   {
     icon: Code2,
     title: "Problem Solving",
-    body: "Solved 600+ LeetCode problems while strengthening algorithmic thinking through graphs, dynamic programming, and data structures.",
+    body: "Solved 700+ LeetCode problems while strengthening algorithmic thinking through graphs, dynamic programming, and data structures.",
     glow: "ochre" as const,
   },
   {

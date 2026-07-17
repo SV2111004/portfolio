@@ -1,9 +1,12 @@
+import resqnetImg from "../assets/projects/resqnet.png";
+import metroImg from "../assets/projects/metro.png";
+import aiDocImg from "../assets/projects/ai-doc.png";
 export interface Project {
   id: string;
   name: string;
   tagline: string;
   stack: string[];
-  thumbnail?: string;
+  coverImage: string;
   problem: string;
   solution: string;
   architecture: string;
@@ -20,6 +23,7 @@ export const projects: Project[] = [
     name: "ResQNet",
     tagline: "A real-time disaster response platform connecting citizens, responders, and command.",
     stack: ["React", "Node.js", "MongoDB", "Express", "Socket.io", "React Leaflet"],
+    coverImage: resqnetImg,
     problem:
       "During emergencies, citizen reports need to reach the right responder fast, with a clear sense of severity and location — not sit in a queue for manual triage.",
     solution:
@@ -39,6 +43,7 @@ export const projects: Project[] = [
     name: "Smart Metro Management System",
     tagline: "A 25-station metro network simulation with routing, fares, and patrol optimization.",
     stack: ["C++", "OOP", "Graph Algorithms", "Dijkstra", "Chinese Postman Problem"],
+    coverImage: metroImg,
     problem:
       "Modeling a metro system realistically means handling more than shortest paths — fare logic, staff operations, and network-wide maintenance routes all need to be represented too.",
     solution:
@@ -57,6 +62,7 @@ export const projects: Project[] = [
     name: "AI Document Intelligence System",
     tagline: "Turns PDFs into summaries, Q&A, structured planners, and multi-speaker podcasts.",
     stack: ["Python", "FastAPI", "React", "Gemini API", "Edge-TTS", "Pydub"],
+    coverImage: aiDocImg,
     problem:
       "Dense PDFs — lecture notes, study material, documentation — take a long time to work through manually, and the format doesn't fit how most people actually want to consume the content.",
     solution:

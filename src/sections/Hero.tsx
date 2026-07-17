@@ -83,8 +83,8 @@ export default function Hero() {
           >
             Final-year CS student building full-stack and AI-powered
             systems — from a real-time disaster-response platform to an
-            LLM-driven document intelligence tool — backed by 600+ DSA
-            problems solved and a 1777 LeetCode contest rating.
+            LLM-driven document intelligence tool — backed by 700+ DSA
+            problems solved and a 1793 LeetCode contest rating.
           </motion.p>
 
           <motion.div
@@ -183,17 +183,25 @@ export default function Hero() {
                 aria-hidden
                 animate={{ y: [0, -10, 0], x: [0, 6, 0] }}
                 transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-                className="glass absolute -left-8 top-8 rounded-xl px-3 py-2 font-mono text-[11px] text-[var(--color-jali-bright)] shadow-lg"
+                className="glass absolute -left-8 top-50 rounded-xl px-3 py-2 font-mono text-[11px]  text-[var(--color-ochre-bright)] shadow-lg"
               >
-                600+ solved
+                700+ problems solved
+              </motion.div>
+              <motion.div
+                aria-hidden
+                animate={{ y: [4, 0, 0], x: [0,0 , 6] }}
+                transition={{ duration: 7.5, repeat: Infinity, ease: "easeInOut" }}
+                className="glass absolute -right-8 top-8 rounded-xl px-3 py-2 font-mono text-[11px]  text-[var(--color-ochre-bright)] shadow-lg"
+              >
+                9.30 CGPA
               </motion.div>
               <motion.div
                 aria-hidden
                 animate={{ y: [0, 10, 0], x: [0, -6, 0] }}
                 transition={{ duration: 6.5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                className="glass absolute -right-6 bottom-10 rounded-xl px-3 py-2 font-mono text-[11px] text-[var(--color-ochre-bright)] shadow-lg"
+                className="glass absolute -right-6 bottom-10 rounded-xl px-3 py-2 font-mono text-[11px]  text-[var(--color-ochre-bright)] shadow-lg"
               >
-                1777 rating
+                1793 LC rating
               </motion.div>
             </motion.div>
           </motion.div>

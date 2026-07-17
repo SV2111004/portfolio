@@ -47,8 +47,8 @@ export const achievements: Achievement[] = [
   {
     id: "leetcode-rating",
     title: "LeetCode Rating",
-    value: "1777",
-    description: "Contest rating, with 600+ DSA problems solved.",
+    value: "1793",
+    description: "Contest rating, with 700+ DSA problems solved.",
   },
   {
     id: "nptel",
@@ -74,6 +74,12 @@ export const achievements: Achievement[] = [
     value: "150+ students",
     description: "Mentored a C++ workshop and helped organise IEEE technical events as a Technical CSE Volunteer.",
   },
+{
+id:"codechef",
+title:"codechef rating",
+value: "1420",
+description: "2 star on codechef",
+},
 ];
 
 export interface EducationEntry {
