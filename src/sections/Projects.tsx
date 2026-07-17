@@ -24,10 +24,10 @@ export default function Projects() {
 
         <div className="mt-14 flex flex-col gap-5">
           {projects.map((project, i) => (
-            <Reveal key={project.id} delay={i * 0.08}>
-              <ProjectCard project={project} index={i} />
-            </Reveal>
-          ))}
+  <Reveal key={project.id} delay={i * 0.08}>
+    <ProjectCard project={project} />
+  </Reveal>
+))}
         </div>
       </div>
     </section>
