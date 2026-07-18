@@ -15,7 +15,7 @@ export const codingProfiles: CodingProfile[] = [
     platform: "LeetCode",
     handle: "@shubhra21004",
     description:
-      "Regularly solving Data Structures & Algorithms problems and participating in weekly contests.",
+      "Solved 700+ DSA problems with a 1793 contest rating, consistently sharpening algorithmic thinking through weekly contests",
     url: "https://leetcode.com/u/shubhra21004/",
   },
   {
@@ -23,15 +23,23 @@ export const codingProfiles: CodingProfile[] = [
     platform: "GitHub",
     handle: "@SV2111004",
     description:
-      "Full-stack development projects, open-source contributions, and personal experiments.",
+      "Showcasing full-stack development projects, open-source contributions, and personal experiments",
     url: "https://github.com/SV2111004",
+  },
+  {
+    id: "codechef",
+    platform: "CodeChef",
+    handle: "@shubhraaa_21",
+    description:
+      "Achieved 2★ with a highest rating of 1420, regularly participating in competitive programming contests",
+    url: "https://www.codechef.com/users/shubhraaa_21",
   },
   {
     id: "codeforces",
     platform: "Codeforces",
     handle: "gp.shubhra78",
     description:
-      "Competitive programming contests focused on algorithms and problem solving.",
+      "Solving advanced algorithmic problems and participating in rated contests to improve speed and problem-solving",
     url: "https://codeforces.com/profile/gp.shubhra78",
   },
 ];
