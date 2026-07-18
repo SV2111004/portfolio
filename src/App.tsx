@@ -1,4 +1,5 @@
 import { useLenis } from "./hooks/useLenis";
+import Preloader from "./components/Preloader";
 import AmbientBackground from "./components/AmbientBackground";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
@@ -16,6 +17,7 @@ export default function App() {
 
   return (
     <>
+      <Preloader />
       <a
         href="#hero"
         className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-full focus:bg-[var(--color-jali-bright)] focus:px-4 focus:py-2 focus:text-[var(--color-ink)]"
